@@ -1,10 +1,10 @@
 const https = require('https');
 
 const userId = 2;
-const url = `https://jsonplaceholder.typicode.com/users/${userId}`;
+const url = `https://api.breakingbadquotes.xyz/v1/quotes/${userId}`;
 
-let name 
-let phone
+let quote
+let author
 
 https.get(url, (res) => {
     let data = '';
@@ -13,15 +13,11 @@ https.get(url, (res) => {
     });
     res.on('end', () => {
         const user = JSON.parse(data);
-        name = user.name
-        phone = user.phone
-        console.log(`Nombre: ${name}`);
-        console.log(`Telefono: ${phone}`);
+        quote = user.quote
+        author = user.author
+        console.log(`Quote: ${quote}`);
+        console.log(`Autor: ${author}`);
     });
 }).on('error', (err) => {
     console.log(`Error: ${err.message}`);
 });
-
-
-
-
