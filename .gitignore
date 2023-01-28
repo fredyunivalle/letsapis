@@ -1,1 +1,19 @@
 node_modules
+
+Al ejecutar el siguiente código en su computadora https://github.com/fredyunivalle/letsapis.git  se va imprimir en consola la siguiente información:
+
+Nombre: Ervin Howell   Telefono: 010-692-6593 x09125
+
+Pro favor modifique el codigo para satisfacer el siguiente requerimiento: 
+
+   imprimir en consola la información ( city , catchPhrase) de la señora Clementina DuBuque.
+
+Para enviar su respuesta 
+
+1. Por favor haga un fork de este en su cuenta de github.
+
+2. Debe crear un PR de una nueva rama hacia la rama main de su propio repositorio 
+
+( NO TIENE QUE HACER EL PR HACIA EL REPOSITORIO DEL PROFESOR)
+
+3. Adjunte la URL de ese PR en es
