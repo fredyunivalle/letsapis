@@ -1,27 +1,12 @@
-const https = require('https');
+let weatherLondon = require('./weather')
 
-const userId = 2;
-const url = `https://jsonplaceholder.typicode.com/users/${userId}`;
+console.log("Personas piloto con mas de 18 años: ");
 
-let name 
-let phone
+//Bucle para recorrer arreglo
+for(var i=0; i<3; i++){
 
-https.get(url, (res) => {
-    let data = '';
-    res.on('data', (chunk) => {
-        data += chunk;
-    });
-    res.on('end', () => {
-        const user = JSON.parse(data);
-        name = user.name
-        phone = user.phone
-        console.log(`Nombre: ${name}`);
-        console.log(`Telefono: ${phone}`);
-    });
-}).on('error', (err) => {
-    console.log(`Error: ${err.message}`);
-});
-
-
-
-
+    //Condicional
+    if (weatherLondon.weather[0].pilotAffected[i].age >= 18){
+        console.log(`Nombre: ${weatherLondon.weather[0].pilotAffected[i].name}`);
+    }
+}
