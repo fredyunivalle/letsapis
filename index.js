@@ -1,5 +1,5 @@
 const https = require('https');
-const url = `https://api.breakingbadquotes.xyz/v1/quotes/10`;
+const url = `https://api.breakingbadquotes.xyz/v1/quotes`;
 
 https.get(url, (res) => {
     let data = '';
@@ -8,12 +8,12 @@ https.get(url, (res) => {
     });
     res.on('end', () => {
         const quotes = JSON.parse(data);
-        console.log(quotes)
-        
+        quotes.forEach((quote) => {
+            if (quote.author === 'Saul Goodman') {
+                console.log(quote.quote);
+            }
+        });
     });
 }).on('error', (err) => {
     console.log(`Error: ${err.message}`);
 });
-
-
-
