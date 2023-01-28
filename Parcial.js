@@ -8,16 +8,14 @@ https.get(url, (res) => {
   });
   res.on('end', () => {
     const quotes = JSON.parse(data);
-    var Saul = [];
-    for (let i in data) {
-      if (data[i] != 'Saul Goodman') {
-        Saul.push(data[i]);
-      }
+    Saul = [];
+    for (let i in quotes) {
+        if(quotes[i].author == "Saul Goodman"){
+            Saul.push(quotes[i]);
+        }
     }
-    console.log(l);
+    console.log(Saul);
   });
 }).on('error', (err) => {
   console.log(`Error: ${err.message}`);
 });
-
-
